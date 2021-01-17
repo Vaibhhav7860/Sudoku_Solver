@@ -52,11 +52,12 @@ def model():
     # Creating a sequential model
     model = Sequential()
     # Adding different layers in the model
-    model.add(Conv2D(20, 5, padding="same", input_shape=(28, 28, 1),activation = "relu"))
+    model.add(Conv2D(32, 5, padding="same", input_shape=(28, 28, 1),activation = "relu"))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
     model.add(Conv2D(50, 5, padding = "same", activation = "relu"))
     model.add(MaxPooling2D(pool_size=(2, 2),strides=(2,2)))
     model.add(Flatten())
+    model.add(Dropout(0.2))
     model.add(Dense(250, activation='relu',use_bias=True))
     model.add(Dense(10, activation='softmax'))
 
@@ -64,7 +65,7 @@ def model():
     model.compile(loss=keras.losses.categorical_crossentropy,optimizer=keras.optimizers.Adam(lr=0.001),metrics=['accuracy'])
 
     BatchSize = 100
-    TotalEpochs = 100
+    TotalEpochs = 10
     # Allowing for data augmentation and data generators
     hist = model.fit_generator(gen.flow(x_train,y_train,BatchSize),steps_per_epoch=450,epochs=TotalEpochs,verbose=1,validation_data=(x_val, y_val))
 
@@ -83,7 +84,7 @@ def model():
     score=model.evaluate(x_test,y_test,verbose=0)
     print("score = ",score[0])
     print("accuracy = ",score[1])
-    model.save('t1.h5')
+    model.save('my_model.h5')
 
 
 model()
