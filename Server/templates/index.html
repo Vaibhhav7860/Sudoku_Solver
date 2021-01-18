@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>SUDOKU SOLVER</title>
+    <style>
+	img {
+	  width: 30vw;
+    height: 40vh;
+    border:5px solid rgb(53, 51, 51);
+    border-radius: 5px;
+	}
+  div{
+    display:flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh auto;
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+  }
+
+  p{
+    display:flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: -10vh  auto;
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+    font-weight:bold ;
+    font-family:'Courier New', Courier, monospace ;
+  }
+  body{
+    background-image: url("{{ url_for('static',filename='pic2.jpg') }}");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: bisque; */
+    /* padding: -5px; */
+    
+  }
+  .header{
+    background-color: rgb(32, 32, 32);
+    padding: 20px 10px;
+    width: 100%;
+    height: 75px;
+    margin:-10px ;
+    border-bottom:2px solid rgb(58, 57, 57);
+    position: relative;
+  }
+  .header a{
+    /* float: right; */
+    position: absolute;
+    left: 20px;
+    color: rgb(61, 61, 61);
+    /* text-align: center; */
+    padding: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: 1.5px 1.5px rgb(141, 139, 139);
+    line-height: 25px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .header a.logo{
+    font-size: 45px;
+    font-weight: 550;
+    color: rgb(253, 250, 250);
+
+  }
+  .header a:active{
+    color: rgb(105, 105, 107);
+  }
+  .header a:hover{
+    color: rgb(105, 105, 107);
+  }
+  </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" class="logo">Sudoku Solver</a>
+    </div>
+    
+    <div align="center">
+    <img id="bg" align="center" src="{{ url_for('detect')}}"><br></br>
+    
+  </div>
+  <p style="color: white;">Place the image in front of the webcam</p>
+  
+
+    
+  </body>
+</html>
