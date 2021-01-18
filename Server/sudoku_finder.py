@@ -69,7 +69,7 @@ def sudoku_finder(img):
     # print(p)
     # print(cv2.contourArea(p))
 
-   # cv2.drawContours(m, p, -1, (255, 0, 0), thickness=6)
+    cv2.drawContours(m, p, -1, (255, 0, 0), thickness=6)
 
     #plt.imshow(m)
     #plt.show()
@@ -100,7 +100,7 @@ def sudoku_finder(img):
     return image, side
 
 
-
+# use the below code for test run otherwise leave it in comment
 #path = "C:\Users\ACER\Desktop\Sudoku1.png"
 #img = cv2.imread(path)
 #sudoku_finder(img)
