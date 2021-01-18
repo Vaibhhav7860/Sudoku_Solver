@@ -86,22 +86,22 @@ model.fit(training_images, training_labels, batch_size=20, epochs=3, verbose=1)
 model.save("sudoku_classification_model.h5")
 
 
-'''
+
 path = "image dataset/sudoku/image10.jpg"
 img = cv2.resize(cv2.imread(path, cv2.IMREAD_GRAYSCALE), (IMAGE_SIZE, IMAGE_SIZE))
 test_image = np.array(img).reshape(-1, IMAGE_SIZE, 1)
-print("aaaaaaaaaaaaaaaaaaaaaa")
+#print("aaaaaaaaaaaaaaaaaaaaaa")
 prediction = model.predict([[test_image]])
 
 print(prediction)
-'''
+
 
 test_data = load_data()
 test_images = np.array([i[0] for i in test_data]).reshape(-1, IMAGE_SIZE, IMAGE_SIZE, 1)
 test_labels = np.array([i[1] for i in test_data])
 
 print('Loading model...')
-model = load_model("sudoku_classification_model.h5")
+#model = load_model("sudoku_classification_model.h5")
 
 print('Testing model...')
 loss, acc = model.evaluate(test_images, test_labels, verbose=1)
