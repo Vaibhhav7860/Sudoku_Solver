@@ -32,7 +32,7 @@ class main:
                 img, side = s.sudoku_finder(frame)
                 plt.imshow(img)
                 plt.show()
-                # cap.release()
+                # cap.release().
                 flag = True
                 if flag == True:
                     warp, pts1, pts2, flag = warped(img, 0)
