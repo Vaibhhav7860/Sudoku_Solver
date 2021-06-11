@@ -60,4 +60,3 @@ if __name__ == '__main__':
 #         cv2.imshow("Img", img)
 #         if cv2.waitKey(1) & 0xff == ord('q'):
 #             break
-# print('end')
