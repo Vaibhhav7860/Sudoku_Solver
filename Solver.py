@@ -1,7 +1,3 @@
-import sys
-
-sys.setrecursionlimit(100000)
-
 # Taking size = 9 for a 9x9 matrix
 SIZE = 9
 # Taking an empty list named matrix which will be created as a
@@ -108,10 +104,11 @@ else:
     print("No solution")
 
 
+'''
 x = solve_sudoku(matrix)
 if x:
-    y = return_sudoku(matrix)
-    for i in range(len(y)):
-        print(y[i])
+    y = print_sudoku(matrix)
+    print(y)
 else:
     print("No Solution !!!")
+'''

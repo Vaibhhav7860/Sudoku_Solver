@@ -253,9 +253,13 @@ def ans(bg, mask, pts1, pts2, originalimage):
     qq = cv2.bitwise_and(originalimage, originalimage, mask=maskinv)
     qw = cv2.bitwise_and(warp1, warp1, mask=mask1)
     qe = cv2.add(qq, qw)
-    cv2.imshow("tt", qe)
+    # cv2.imshow("tt", qe)
+    # rect,qe_image=cv2.imencode('.jpg', qe)
+    return qe
 
 def output(img, sol, av,arr):
+    overlay = img.copy()
+    out = img.copy()
     bg = img.copy()
     bg[:] = [0, 0, 0]
     for i in range(9):
@@ -272,3 +276,26 @@ def output(img, sol, av,arr):
     return bg, mask
 
 
+'''
+def solver(puzzle):
+    for itrations in range(0, 3):
+        zones = extract_zones(puzzle)
+        for zone in zones:
+            if zone["type"] == "row":
+                row = zone["coord"]
+                for col in range(0, 9):
+                    insert_possibilities(puzzle, row, col)
+            elif zone["type"] == "col":
+                col = zone["coord"]
+                for row in range(0, 9):
+                    insert_possibilities(puzzle, row, col)
+            else:
+                row_begin = zone["coord"][0]
+                row_end = zone["coord"][1]
+                col_begin = zone["coord"][2]
+                col_end = zone["coord"][3]
+                for row in range(row_begin, row_end + 1):
+                    for col in range(col_begin, col_end + 1):
+                        insert_possibilities(puzzle, row, col)
+    return puzzle
+'''
